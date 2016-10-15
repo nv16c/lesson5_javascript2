@@ -7,8 +7,8 @@
       Project Title: Income Tax Calculator 
       Filename: taxCalculator.html
 
-      Author: 
-      Date:   
+      Author: Niccolo' Varalla
+      Date:   10/14/16
    -->
    <meta charset="utf-8" />
    <meta id="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,7 +124,7 @@
          //0-Single, 1-Married Jointly, 2-Married Separately, and 3-Head of Household
 
           if (status == 0) { 
-             // Compute tax for single filers
+               // Compute tax for single filers
                if (income <= 9225){
                  tax = income * 0.10;
                  taxRate = 10;
@@ -174,9 +174,41 @@
                   * 
                   *                       INSERT YOUR CODE BELOW!
                  *******************************************************************************/
-             
-             
-             
+               if (income <= 18450){
+                 tax = income * 0.10;
+                 taxRate = 10;
+               }//end of nested if
+               else if (income <= 74900) {
+                 tax = 18450 * 0.10 + (income - 18450) * 0.15;
+                 taxRate = 15;
+               }//end of else if
+               else if (income <= 151200) {
+                 tax = 18450 * 0.10 + (74900 - 18450) * 0.15 + (income - 74900) * 0.25;
+                 taxRate = 25;
+               } //end of else if
+               else if (income <= 230450) {
+                 tax = 18450 * 0.10 + (74900 - 18450) * 0.15 +
+                       (151200 - 74900) * 0.25 + (income - 1512000) * 0.28;
+                 taxRate = 28;
+               }//end of else if
+               else if (income <= 411500) {
+                 tax = 18450 * 0.10 + (74900 - 18450) * 0.15 +
+                       (151200 - 74900) * 0.25 + (230450 - 151200) * 0.28 +
+                       (income - 230450) * 0.33;
+                 taxRate = 33;
+               }//end of else if
+               else if (income <= 464850) {
+                  tax = 18450 * 0.10 + (74900 - 18450) * 0.15 +
+                        (151200 - 74900) * 0.25 + (189300 - 90750) * 0.28 +
+                        (411500 - 230450) * 0.33 + (income - 411500) * 0.35;
+                  taxRate = 35;
+               }//end of else if
+               else {
+                  tax = 18450 * 0.10 + (74900 - 18450) * 0.15 +
+                        (151200 - 74900) * 0.25 + (189300 - 90750) * 0.28 +
+                        (411500 - 230450) * 0.33 + (464850 - 411500 ) * 0.35 + (income - 464850) * .396;
+                  taxRate = 39.6;
+               }//end of else
           }//end of married file jointly calculation
           
           else if(status == 2) {
@@ -191,7 +223,7 @@
                   * 
                   *                       INSERT YOUR CODE BELOW!
                  *******************************************************************************/
-             
+
              
              
           }//end of married file separately calculation
@@ -208,7 +240,7 @@
                   * 
                   *                       INSERT YOUR CODE BELOW!
                  *******************************************************************************/
-             
+
              
              
              

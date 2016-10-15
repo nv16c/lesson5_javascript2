@@ -223,7 +223,41 @@
                   * 
                   *                       INSERT YOUR CODE BELOW!
                  *******************************************************************************/
-
+                if (income <= 9){
+                 tax = income * 0.10;
+                 taxRate = 10;
+               }//end of nested if
+               else if (income <= 37450) {
+                 tax = 9225 * 0.10 + (income - 9225) * 0.15;
+                 taxRate = 15;
+               }//end of else if
+               else if (income <= 75600) {
+                 tax = 9225 * 0.10 + (37450 - 9225) * 0.15 + (income - 37450) * 0.25;
+                 taxRate = 25;
+               } //end of else if
+               else if (income <= 115225) {
+                 tax = 9225 * 0.10 + (37450 - 9225) * 0.15 +
+                       (75600 - 37450) * 0.25 + (income - 75600) * 0.28;
+                 taxRate = 28;
+               }//end of else if
+               else if (income <= 205750) {
+                 tax = 9225 * 0.10 + (37450 - 9225) * 0.15 +
+                       (75600 - 37450) * 0.25 + (115225 - 75600) * 0.28 +
+                       (income - 115225) * 0.33;
+                 taxRate = 33;
+               }//end of else if
+               else if (income <= 232425) {
+                  tax = 9225 * 0.10 + (37450 - 9225) * 0.15 +
+                        (75600 - 37450) * 0.25 + (115225 - 75600) * 0.28 +
+                        (205750 - 115225) * 0.33 + (income - 205750) * 0.35;
+                  taxRate = 35;
+               }//end of else if
+               else {
+                  tax = 9225 * 0.10 + (37450 - 9225) * 0.15 +
+                        (75600 - 37450) * 0.25 + (115225 - 75600) * 0.28 +
+                        (205705- 115225) * 0.33 + (232245 - 411500 ) * 0.35 + (income - 232425) * .396;
+                  taxRate = 39.6;
+               }//end of else
              
              
           }//end of married file separately calculation
